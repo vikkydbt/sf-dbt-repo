@@ -46,3 +46,6 @@ models:
     consumption:
       +materialized: table  
       schema : consumption
+    dwh:
+      +materialized: table
+      schema : dwh
