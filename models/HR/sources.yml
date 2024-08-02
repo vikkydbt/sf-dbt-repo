@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: emp_src
+    database: hr_db
+    schema: raw
+    tables:
+      - name: employee_details
+     

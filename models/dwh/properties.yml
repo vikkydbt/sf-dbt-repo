@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: anb_src
+    description: This is source .
+    schema: LANDING
+    tables:
+      - name: myorder           #  user define name for table
+        identifier: orderitems  # Actual table name

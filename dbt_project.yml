@@ -49,3 +49,7 @@ models:
     dwh:
       +materialized: table
       schema : dwh
+    HR:
+      +materialized: table
+      database: hr_db
+      schema : dwh
