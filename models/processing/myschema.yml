@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: customers_stg
+    description: "customers_stg from customer raw table"
+    columns:
+      - name: LastName
+        description: "Last name is a required field"
+        data_tests:          
+          - not_null
+
+      - name: CustomerID
+        data_tests:
+          - unique
+          - not_null
+
+      - name: City
+        data_tests:
+          - accepted_values: 
+              values: ['Chicago', 'Los Angeles','Springfield']
+      - name: COUNTRY_CODE
+        data_tests:
+          - relationships:
+              to: ref('country_code') # model name
+              field: country_code        
+  - name: orders_stg
+    description: staged order data from raw order table  
+    columns:
+      - name: OrderID
+        description: The primary key got orders_stg table
+        tests:
+          - unique
+          - not_null
+  - name: ordersitems_stg
+    description: staged order data from raw orderitem table
+    columns:
+      - name: OrderID
+        tests:
+          - relationships:
+              to: ref('orders_stg')
+              field: OrderID          
