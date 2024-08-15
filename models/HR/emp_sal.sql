@@ -1,0 +1,1 @@
+select * from  HR_DB.RAW.EMPLOYEE_DETAILS

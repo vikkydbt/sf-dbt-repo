@@ -4,6 +4,12 @@ models:
   - name: customers_stg
     description: "customers_stg from customer raw table"
     columns:
+      - name: email
+        data_tests:          
+          - string_not_empty
+
+
+
       - name: LastName
         description: "Last name is a required field"
         data_tests:          
@@ -38,4 +44,5 @@ models:
         tests:
           - relationships:
               to: ref('orders_stg')
-              field: OrderID          
+              field: OrderID  
+        
