@@ -6,7 +6,7 @@ models:
     columns:
       - name: email
         data_tests:          
-          - string_not_empty
+          - check_string_is_empty
 
 
 
