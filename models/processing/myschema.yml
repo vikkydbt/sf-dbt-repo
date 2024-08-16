@@ -37,12 +37,15 @@ models:
         tests:
           - unique
           - not_null
-  - name: ordersitems_stg
+  - name: orderitems_stg
     description: staged order data from raw orderitem table
     columns:
       - name: OrderID
         tests:
           - relationships:
               to: ref('orders_stg')
-              field: OrderID  
+              field: OrderID
+      - name: QUANTITY
+        tests:          
+          - check_string_is_empty       
         
