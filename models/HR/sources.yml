@@ -6,4 +6,5 @@ sources:
     schema: raw
     tables:
       - name: employee_details
+      - name: dept
      
