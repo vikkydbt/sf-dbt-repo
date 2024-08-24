@@ -1,0 +1,1 @@
+select * from source('emp_src', 'dept')
